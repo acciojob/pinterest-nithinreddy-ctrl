@@ -1,1 +1,59 @@
 /*  your css code here. If applicable */
+/* --- Base Reset --- */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; color: #111; background: #fff; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+
+/* --- Hero Container --- */
+.hero {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 3rem;
+min-height: 90vh;
+padding: 4rem 1.5rem;
+background: linear-gradient(180deg, #fff 0%, #ffecef 100%);
+}
+
+
+/* --- Left: Text Content --- */
+.hero .content { max-width: 640px; }
+.hero h1 { font-size: clamp(2rem, 4vw + 1rem, 4rem); line-height: 1.05; margin: 0 0 1rem 0; letter-spacing: -0.02em; }
+.hero p { font-size: clamp(1rem, 1.2vw + 0.6rem, 1.25rem); margin: 0 0 1.75rem 0; color: #333; }
+
+
+/* --- CTA Button --- */
+.hero .cta {
+padding: 0.85rem 1.25rem;
+background-color: #e60023;
+color: #fff;
+border-radius: 999px;
+font-weight: 600;
+display: inline-block;
+transition: transform 120ms ease, filter 120ms ease;
+}
+.hero .cta:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.hero .cta:active { transform: translateY(0); filter: brightness(0.95); }
+
+
+/* --- Right: Image Card --- */
+.hero .media {
+width: min(42vw, 520px);
+height: clamp(360px, 55vh, 620px);
+border-radius: 28px;
+overflow: hidden;
+box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+background: #f7f7f7;
+border: 6px solid #fff;
+}
+.hero .media img { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* --- Small screens --- */
+@media (max-width: 860px) {
+.hero { flex-direction: column-reverse; text-align: center; gap: 2rem; padding-top: 2rem; }
+.hero .content { max-width: 720px; }
+.hero .media { width: 100%; height: 48vh; }
+}
